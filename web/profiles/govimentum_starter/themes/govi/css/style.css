@@ -1,0 +1,179 @@
+/* thai */
+@font-face {
+  font-family: 'Mitr';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Mitr Regular'), local('Mitr-Regular'), url(https://fonts.gstatic.com/s/mitr/v4/pxiLypw5ucZF-Sg4Maj_.woff2) format('woff2');
+  unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Mitr';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Mitr Regular'), local('Mitr-Regular'), url(https://fonts.gstatic.com/s/mitr/v4/pxiLypw5ucZF-TM4Maj_.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Mitr';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Mitr Regular'), local('Mitr-Regular'), url(https://fonts.gstatic.com/s/mitr/v4/pxiLypw5ucZF-TI4Maj_.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Mitr';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Mitr Regular'), local('Mitr-Regular'), url(https://fonts.gstatic.com/s/mitr/v4/pxiLypw5ucZF-Tw4MQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(https://fonts.gstatic.com/s/ubuntu/v13/4iCs6KVjbNBYlgoKcg72j00.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(https://fonts.gstatic.com/s/ubuntu/v13/4iCs6KVjbNBYlgoKew72j00.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(https://fonts.gstatic.com/s/ubuntu/v13/4iCs6KVjbNBYlgoKcw72j00.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(https://fonts.gstatic.com/s/ubuntu/v13/4iCs6KVjbNBYlgoKfA72j00.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(https://fonts.gstatic.com/s/ubuntu/v13/4iCs6KVjbNBYlgoKcQ72j00.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(https://fonts.gstatic.com/s/ubuntu/v13/4iCs6KVjbNBYlgoKfw72.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+:root {
+    --blue: #003a5b;
+    --bluemenu: #50778e;
+	--txtgrey: #989797;
+	--backgrey: #f3f3f3;
+}
+/*!
+Estilos globales
+*/
+h6{
+font-size:1.125rem;
+}
+h1, h2,h3,h4,h5,h6{
+font-family: 'Mitr', sans-serif;
+color:#333;
+}
+
+p{
+font-size:1.8rem;
+color:#777;
+}
+.mt-5, .my-5 {
+    margin-top: 3rem!important;
+}
+/*!
+Estilos footer
+*/
+.footer-color,.footer-color-top{
+color:#ffffff;
+}
+.footer-color p,.footer-color-top p{
+font-size:1.4rem;
+margin: 25px 0px;
+color:#ffffff;
+}
+.footer-color-top p{
+font-size:1.4rem;
+margin: 10px 0px;
+}
+.footer-color-bottom h6{
+font-size:0.8rem;
+margin: 10px 0px;
+color:#ffffff;
+}
+/*!
+Estilos botones
+*/
+.btn-base {
+color:#ffffff;
+font-family: 'Mitr', sans-serif;
+margin-bottom: 10px;
+margin-top: 10px;
+}
+.btn-base:hover {
+color:#ffffff;
+}
+.btn-base i {  
+padding: 0px 5px;
+position: relative;
+left: 5px;
+}
+/*!
+Estilos iconos
+*/
+.icon-color i {
+font-size:3.5rem;
+padding: 1rem;
+}
+/*!
+Estilos barra de mas enlaces destacados
+*/
+.more-link{
+border-top: 3px solid;
+}
+.more-link i{
+font-size:1rem;
+}
+.more-link a{
+font-family: Ubuntu,sans-serif;
+font-size: 1.25em;
+margin: -4px 0 0;
+padding: 0px 30px;
+width: auto;
+border-left: 3px solid;
+border-right: 3px solid;
+border-bottom: 3px solid;	
+border-top: 5px solid #ffffff !important;
+
+}

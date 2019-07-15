@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Control
+type: control
+description: 'Contenido que se debe usar para cargar elementos relacionados con informes, planes de mejoramiento, entes y mecanizmos de supervisión y control. (Reportes de control interno, informes de evaluación ejecución y auditoria'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

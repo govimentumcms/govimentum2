@@ -1,0 +1,47 @@
+:root {
+--color1: #045176;
+--color2: #07638f;
+--color3: #10719f;
+--color4: #187cab;
+--white: #ffffff;    
+}
+.btn-color {
+background-color: var(--color3);
+border-color: var(--color3);
+}
+.btn-color:hover {
+background-color: var(--color2);
+border-color: var(--color2);
+}
+.btn-color-white {
+background-color: var(--white);
+border-color:var(--color3);
+color:var(--color3);
+}
+.btn-color-white:hover {
+background-color: var(--color3);
+border-color: var(--color3);
+}
+.icon-color i {
+color: var(--color3);
+}
+.more-link{
+border-color: var(--color3);
+}
+.more-link a{
+border-color: var(--color3);
+color: var(--color3);
+}
+.more-link a:hover{
+color:var(--color2);
+}
+.footer-color{
+background-color: var(--color2);
+border-top: solid 8px var(--color1);	
+}
+.footer-color-top{
+background-color: var(--color3);
+}
+.footer-color-bottom	{
+background-color: var(--color1);
+}
