@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.control.field_archivo
+    - field.field.node.control.field_descripcion
+    - field.field.node.control.field_enlace
+    - field.field.node.control.field_recurso
+    - node.type.control
+  module:
+    - user
+id: node.control.teaser
+targetEntityType: node
+bundle: control
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_archivo: true
+  field_descripcion: true
+  field_enlace: true
+  field_recurso: true

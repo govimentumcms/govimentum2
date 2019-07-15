@@ -1,0 +1,77 @@
+name: Govimentum
+type: profile
+description: 'Pefil de instalacion para el sector gobierno.'
+core: 8.x
+
+distribution:
+  name: Govimentum D8
+  langcode: en
+  
+# Modules to install to support the profile.
+install:
+  - history
+  - block_content
+  - breakpoint
+  - color
+  - config
+  - comment
+  - contextual
+  - contact
+  - quickedit
+  - help
+  - image
+  - options
+  - path
+  - taxonomy
+  - dblog
+  - search
+  - shortcut
+  - toolbar
+  - field_ui
+  - file
+  - rdf
+  - views
+  - views_ui
+  - editor
+  - ckeditor
+  - entity_reference_revisions
+  - accordion_menus
+  - admin_toolbar
+  - ctools
+  - feeds
+  - gtranslate
+  - pathauto
+  - sitemap
+  - token
+  - views_slideshow
+  - webform
+  - datetime
+  - user
+  - conditional_fields
+  - file
+  - link
+  - path
+  - text
+  
+
+
+
+# Required modules
+# Note that any dependencies of the modules listed here will be installed automatically.
+dependencies:
+  - node
+  - block
+  - views
+  - conditional_fields
+  - file
+  - link
+  - path
+  - text
+
+# List any themes that should be installed as part of the profile installation.
+# Note that this will not set any theme as the default theme.
+themes:
+  - bartik
+  - seven
+  - govi
+  
