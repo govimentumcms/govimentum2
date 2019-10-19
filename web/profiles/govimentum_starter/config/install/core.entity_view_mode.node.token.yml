@@ -3,7 +3,7 @@ status: true
 dependencies:
   module:
     - node
-id: node.teaser
-label: Teaser
+id: node.token
+label: Token
 targetEntityType: node
 cache: true

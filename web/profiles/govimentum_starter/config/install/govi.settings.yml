@@ -1,0 +1,17 @@
+schemas:
+  bootstrap: 8000
+  govi: 8000
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: 'http://govi2-test.govi.box/profiles/govimentum_starter/themes/bootstrap/favicon.ico'
+  use_default: true
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  path: ''
+  url: ''
+  use_default: true
