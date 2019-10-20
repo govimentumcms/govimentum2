@@ -52,6 +52,9 @@ install:
   - link
   - path
   - text
+  - menu_ui
+  - menu_link_content
+  - menu_export
   
 
 
