@@ -1,4 +1,9 @@
 <?php
+use Drupal\Core\Form\ConfigFormBase;
+use Drupal\menu_export\Form\MenuImportForm;
+use Drupal\Core\Config\FileStorage;
+use Drupal\system\Entity\Menu;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
 
 /**
  * @file
@@ -19,5 +24,44 @@ function govimentum_starter_install() {
 
   // Can add code in here to make nodes, terms, etc.
 
-}
 
+  // Apply menu import export configuration
+  // @see \Drupal\menu_export\Form\MenuImportForm:sendForm
+
+  $config_path = drupal_get_path('profile', 'govimentum_starter') . '/config/install';
+  $source = new FileStorage($config_path);
+  $config_storage = \Drupal::service('config.storage');
+  $menus = $config_storage->read('menu_export.export_data');
+  $invalidMenus = [];
+
+  foreach ($menus as $key => $menu) {
+    // Config storage data returns _core element at the end of array
+    // that breaks iteration. We should investigate why this element
+    // is aggregated by default.
+    if ($key === '_core') continue;
+    $menu_name = $menu['menu_name']['value'];
+    if (!Menu::load($menu_name)) {
+      $invalidMenus[] = $menu_name;
+      continue;
+    }
+    unset($menu['id']);
+    $menuLinkEntity = \Drupal::entityQuery('menu_link_content')
+      ->condition('uuid', $menu['uuid'])
+      ->execute();
+    if (!$menuLinkEntity) {
+      $menuLinkEntity = MenuLinkContent::create();
+    }else{
+      $menuLinkEntity = MenuLinkContent::load(reset($menuLinkEntity));
+    }
+    foreach ($menu as $kkey => $items) {
+      $menuLinkEntity->set($kkey, $items);
+    }
+    $menuLinkEntity->save();
+    unset($menuLinkEntity);
+  }
+  if(count($invalidMenus)){
+    drupal_set_message(t('Menu(s) @menus not found',['@menus'=>implode(',',$invalidMenus)]),'error');
+  }else{
+    drupal_set_message(t('Menu(s) imported successfully'),'success');
+  }
+}
