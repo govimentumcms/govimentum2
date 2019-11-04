@@ -51,17 +51,54 @@
  * @see html.html.twig
  */
 #}
-
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
+
+{# Header top #}
+<div class="{{ container }}">
+  <div class="row">
+    {# Top bar #}
+    {% if page.top_bar %}
+      {% block top_bar %}
+        <div class="col-sm-12">
+          {{ page.top_bar }}
+        </div>
+      {% endblock %}
+    {% endif %}
+  </div>
+  <div class="row">
+    {# Site logo #}
+    {% if page.logo %}
+      {% block logo %}
+        <div class="col-sm-2">
+          {{ page.logo }}
+        </div>
+      {% endblock %}
+    {% endif %}
+
+    <div class="col-sm-5">
+      <h1>{{ site_name }}</h1>
+    </div>
+
+    {# Search form #}
+    {% if page.search %}
+      {% block search %}
+        <div class="col-sm-5">
+          {{ page.logo }}
+        </div>
+      {% endblock %}
+    {% endif %}
+  </div>
+</div>
+
 {# Navbar #}
 {% if page.navigation or page.navigation_collapsible %}
   {% block navbar %}
     {%
-      set navbar_classes = [
-        'navbar',
-        theme.settings.navbar_inverse ? 'navbar-inverse' : 'navbar-default',
-        theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
-      ]
+    set navbar_classes = [
+    'navbar',
+    theme.settings.navbar_inverse ? 'navbar-inverse' : 'navbar-default',
+    theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
+    ]
     %}
     <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
       {% if not navbar_attributes.hasClass(container) %}
@@ -98,14 +135,37 @@
   <div role="main" class="main-container {{ container }} js-quickedit-main-content">
     <div class="row">
 
-      {# Header #}
-      {% if page.header %}
-        {% block header %}
-          <div class="col-sm-12" role="heading">
-            {{ page.header }}
+      {% if is_front %}
+        {# Slideshow #}
+        {% if page.slideshow %}
+          {% block slideshow %}
+            <div class="col-sm-12">
+              {{ page.slideshow }}
+            </div>
+          {% endblock %}
+        {% endif %}
+      {% endif %}
+
+      {# Featured top #}
+      {% if page.featured_top %}
+        {% block featured_top %}
+          <div class="col-sm-12">
+            {{ page.featured_top }}
           </div>
         {% endblock %}
       {% endif %}
+
+      {% if is_front %}
+        {# Featured main #}
+        {% if page.featured_main %}
+          {% block featured_main %}
+            <div class="col-sm-12">
+              {{ page.featured_main }}
+            </div>
+          {% endblock %}
+        {% endif %}
+      {% endif %}
+
 
       {# Sidebar First #}
       {% if page.sidebar_first %}
@@ -118,12 +178,12 @@
 
       {# Content #}
       {%
-        set content_classes = [
-          page.sidebar_first and page.sidebar_second ? 'col-sm-6',
-          page.sidebar_first and page.sidebar_second is empty ? 'col-sm-9',
-          page.sidebar_second and page.sidebar_first is empty ? 'col-sm-9',
-          page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12'
-        ]
+      set content_classes = [
+      page.sidebar_first and page.sidebar_second ? 'col-sm-6',
+      page.sidebar_first and page.sidebar_second is empty ? 'col-sm-9',
+      page.sidebar_second and page.sidebar_first is empty ? 'col-sm-9',
+      page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12'
+      ]
       %}
       <section{{ content_attributes.addClass(content_classes) }}>
 
@@ -141,11 +201,11 @@
           {% endblock %}
         {% endif %}
 
-        {# Content #}
+        {# Content
         {% block content %}
           <a id="main-content"></a>
           {{ page.content }}
-        {% endblock %}
+        {% endblock %}#}
       </section>
 
       {# Sidebar Second #}
@@ -154,6 +214,15 @@
           <aside class="col-sm-3" role="complementary">
             {{ page.sidebar_second }}
           </aside>
+        {% endblock %}
+      {% endif %}
+
+      {# Featured bottom #}
+      {% if page.featured_bottom %}
+        {% block featured_bottom %}
+          <div class="col-sm-12">
+            {{ page.featured_bottom }}
+          </div>
         {% endblock %}
       {% endif %}
     </div>

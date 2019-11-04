@@ -1,8 +1,16 @@
 <?php
 
+use Drupal\Core\Cache\CacheableMetadata;
+
 /**
  * @file
  * Bootstrap sub-theme.
  *
  * Place your custom PHP code in this file.
  */
+
+function govi_preprocess_page(&$variables) {
+
+    $config = \Drupal::config('system.site');
+    $variables['site_name']['#markup'] = $config->get('name');
+}
